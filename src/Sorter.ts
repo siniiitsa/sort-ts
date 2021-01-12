@@ -1,7 +1,13 @@
 import { NumbersCollection } from './NumbersCollection';
 
+export interface Sortable {
+  length: number;
+  compare(index1: number, index2: number): boolean;
+  swap(index1: number, index2: number): void;
+}
+
 export class Sorter {
-  constructor(public collection: NumbersCollection) {}
+  constructor(public collection: Sortable) {}
 
   sort(): void {
     const { length } = this.collection;
