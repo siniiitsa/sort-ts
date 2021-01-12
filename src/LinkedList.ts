@@ -67,10 +67,14 @@ export class LinkedList extends Sorter {
   print(): void {
     if (!this.head) return;
 
+    let output: string = '';
     let node: Node | null = this.head;
     while (node) {
-      console.log(node.data);
+      output += `${node.data}, `;
       node = node.next;
     }
+    output = output.slice(0, -2);
+
+    console.log(output);
   }
 }

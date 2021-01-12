@@ -82,11 +82,14 @@ var LinkedList = /** @class */ (function (_super) {
     LinkedList.prototype.print = function () {
         if (!this.head)
             return;
+        var output = '';
         var node = this.head;
         while (node) {
-            console.log(node.data);
+            output += node.data + ", ";
             node = node.next;
         }
+        output = output.slice(0, -2);
+        console.log(output);
     };
     return LinkedList;
 }(Sorter_1.Sorter));
